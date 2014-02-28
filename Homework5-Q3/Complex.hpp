@@ -32,6 +32,18 @@ public:
 		return * this;
 	}
 
+	Complex & operator-=(const Complex & r) {
+		re -= r.re;
+		im -= r.im;
+		return * this;
+	}
+
+	Complex & operator*=(const Complex & r) {
+		re = (re*r.re-im*r.im);
+		im = (re*r.im+r.re*im);
+		return * this;
+	}
+
 	Complex & operator/=(const Complex & r) {
 		double denom = r.modulusSqr();
 				if(denom==0) { // this is technically an error! division by 0
