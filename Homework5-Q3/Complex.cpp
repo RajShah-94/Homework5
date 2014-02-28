@@ -2,7 +2,7 @@
  * Complex.cpp
  *
  *  Created on: 28 Feb 2014
- *      Author: rajru_000
+ *      Author: Raj Shah 120695027
  */
 
 #include "Complex.hpp"

@@ -2,7 +2,7 @@
  * Complex.hpp
  *
  *  Created on: 28 Feb 2014
- *      Author: rajru_000
+ *      Author: Raj Shah 120695027
  */
 
 #ifndef COMPLEX_HPP_
@@ -32,16 +32,41 @@ public:
 		return * this;
 	}
 
+	Complex operator+(const Complex & r) {
+		Complex s(*this);
+		s += r;
+		return s;
+	}
+
 	Complex & operator-=(const Complex & r) {
 		re -= r.re;
 		im -= r.im;
 		return * this;
 	}
 
+    Complex operator-(const Complex & r) {
+    	 Complex s(*this);
+    	 s -= r;
+    	 return s;
+    }
+
+    Complex operator-() {
+        Complex s(*this);
+        s.re = -s.re;
+        s.im = -s.im;
+        return s;
+    }
+
 	Complex & operator*=(const Complex & r) {
 		re = (re*r.re-im*r.im);
 		im = (re*r.im+r.re*im);
 		return * this;
+	}
+
+	Complex operator*(const Complex & r) {
+		Complex s(*this);
+	    s *= r;
+	    return s;
 	}
 
 	Complex & operator/=(const Complex & r) {
@@ -56,6 +81,11 @@ public:
 				return *this;
 	}
 
+    Complex operator/(const Complex & r) {
+        Complex s(*this);
+        s /= r;
+        return s;
+    }
 
 	double modulus() const;
 	double modulusSqr() const;
